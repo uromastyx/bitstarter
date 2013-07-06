@@ -2,13 +2,10 @@ var express = require('express');
 var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
-console.log("about to start FS");
   var fs = require('fs');
-console.log("about to start new buffer");
   var mybuffer = new Buffer(16);
-console.log("about to read file ");
-mybuffer=fs.readFileSync("index.html");
-console.log(mybuffer.toString());
+   mybuffer=fs.readFileSync("index.html");
+
   response.send(mybuffer.toString());
 });
 
